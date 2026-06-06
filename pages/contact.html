@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Dom's Barber Lounge | 60 Lyndale Ave Toronto</title>
+<meta name="description" content="Contact Dom's Barber Lounge at 60 Lyndale Ave, Toronto. Call 613-725-2222, send a message, or get directions. Book online anytime.">
+<link rel="canonical" href="https://domsbarberlounge.ca/pages/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.contact-hero{padding:140px 0 60px;background:var(--black);text-align:center}
+.contact-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);color:var(--white);font-weight:300;letter-spacing:.05em}
+.contact-hero h1 span{color:var(--gold)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:80px 0;align-items:start}
+@media(max-width:768px){.contact-layout{grid-template-columns:1fr;gap:3rem}}
+.contact-info-card{background:var(--charcoal);border:1px solid var(--border);padding:2.5rem}
+.contact-info-card h2{font-family:var(--font-display);font-size:1.8rem;color:var(--white);font-weight:400;margin-bottom:2rem}
+.contact-item{display:flex;gap:1.2rem;margin-bottom:2rem;align-items:flex-start}
+.contact-icon{width:44px;height:44px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;border-radius:2px}
+.contact-item-info h3{font-family:var(--font-heading);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.contact-item-info p,.contact-item-info a{color:var(--text-muted);font-size:.95rem;text-decoration:none;transition:color .3s}
+.contact-item-info a:hover{color:var(--gold)}
+.hours-grid{margin-top:2rem;border-top:1px solid var(--border);padding-top:1.5rem}
+.hours-grid h3{font-family:var(--font-heading);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.hours-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.9rem}
+.hours-row .day{color:var(--text-muted)}
+.hours-row .time{color:var(--white);font-family:var(--font-heading)}
+.hours-row.today .day,.hours-row.today .time{color:var(--gold)}
+/* Form */
+.contact-form-wrap{background:var(--charcoal);border:1px solid var(--border);padding:2.5rem}
+.contact-form-wrap h2{font-family:var(--font-display);font-size:1.8rem;color:var(--white);font-weight:400;margin-bottom:.5rem}
+.contact-form-wrap p{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-family:var(--font-heading);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.4rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);padding:.85rem 1rem;font-family:var(--font-body);font-size:.95rem;outline:none;transition:border-color .3s;box-sizing:border-box;border-radius:2px}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+.form-group textarea{height:130px;resize:vertical}
+.form-group select option{background:var(--black)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+/* Map */
+.map-section{padding:0 0 80px}
+.map-container{position:relative;border:1px solid var(--border);overflow:hidden}
+.map-container iframe{width:100%;height:450px;display:block;filter:grayscale(30%) contrast(1.1)}
+.map-overlay-card{position:absolute;top:2rem;left:2rem;background:rgba(10,10,10,.92);border:1px solid var(--border);padding:1.5rem 2rem;backdrop-filter:blur(10px);border-left:3px solid var(--gold)}
+.map-overlay-card h3{font-family:var(--font-display);font-size:1.3rem;color:var(--white);font-weight:400}
+.map-overlay-card p{color:var(--text-muted);font-size:.85rem;margin:.3rem 0}
+.map-overlay-card .gold{color:var(--gold)}
+.map-actions{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.map-actions a{font-family:var(--font-heading);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border-radius:2px;text-decoration:none;transition:all .3s}
+.map-dir{background:var(--gold);color:var(--black)}
+.map-dir:hover{background:var(--gold-light)}
+.map-call{background:transparent;border:1px solid var(--border);color:var(--white)}
+.map-call:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:500px){.map-overlay-card{position:static;border-left:none;border-top:3px solid var(--gold)}}
+/* Parking & Transit */
+.practical-section{background:var(--charcoal);padding:60px 0}
+.practical-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem}
+.practical-card{background:var(--black);border:1px solid var(--border);padding:1.5rem;text-align:center;border-radius:2px}
+.practical-card .icon{font-size:2rem;margin-bottom:.8rem}
+.practical-card h3{font-family:var(--font-heading);font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.practical-card p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="../index.html" class="logo">Dom's <span>Barber</span> Lounge</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="book.html" class="btn-nav">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="contact-hero">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h1>Contact <span>Us</span></h1>
+    <p>We're here to help. Reach out by phone, message, or just drop in.</p>
+  </div>
+</section>
+
+<section style="background:var(--black)">
+  <div class="container">
+    <div class="contact-layout">
+      <div>
+        <div class="contact-info-card">
+          <h2>Visit the Lounge</h2>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-info">
+              <h3>Address</h3>
+              <p>60 Lyndale Ave<br>Toronto, Ontario, Canada</p>
+              <a href="https://maps.google.com/?q=60+Lyndale+Ave+Toronto+Ontario" target="_blank" rel="noopener" style="display:inline-block;margin-top:.4rem;color:var(--gold);font-family:var(--font-heading);font-size:.8rem;letter-spacing:.05em">Get Directions →</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-item-info">
+              <h3>Phone</h3>
+              <a href="tel:6137252222">613-725-2222</a>
+              <p style="font-size:.8rem;margin-top:.2rem">Call or text anytime during business hours</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div class="contact-item-info">
+              <h3>Email</h3>
+              <a href="mailto:hello@domsbarberlounge.ca">hello@domsbarberlounge.ca</a>
+              <p style="font-size:.8rem;margin-top:.2rem">We reply within 24 hours</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📸</div>
+            <div class="contact-item-info">
+              <h3>Social Media</h3>
+              <a href="https://instagram.com/domsbarberlounge" target="_blank" rel="noopener">@domsbarberlounge</a>
+              <p style="font-size:.8rem;margin-top:.2rem">Follow for daily cuts and inspiration</p>
+            </div>
+          </div>
+
+          <div class="hours-grid">
+            <h3>Business Hours</h3>
+            <div class="hours-row" id="mon"><span class="day">Monday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row" id="tue"><span class="day">Tuesday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row" id="wed"><span class="day">Wednesday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row" id="thu"><span class="day">Thursday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row" id="fri"><span class="day">Friday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row" id="sat"><span class="day">Saturday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+            <div class="hours-row" id="sun"><span class="day">Sunday</span><span class="time">10:00 AM – 4:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h2>Send a Message</h2>
+        <p>Have a question? Want to check availability? We'll get back to you within a few hours.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cfName">First Name</label>
+            <input type="text" id="cfName" placeholder="John" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="cfLast">Last Name</label>
+            <input type="text" id="cfLast" placeholder="Doe" autocomplete="family-name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cfEmail">Email Address</label>
+          <input type="email" id="cfEmail" placeholder="john@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="cfPhone">Phone (optional)</label>
+          <input type="tel" id="cfPhone" placeholder="416-555-0100" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="cfSubject">Subject</label>
+          <select id="cfSubject">
+            <option value="">Select a subject...</option>
+            <option>Booking Question</option>
+            <option>Pricing Inquiry</option>
+            <option>Service Question</option>
+            <option>Event / Group Booking</option>
+            <option>Partnership / Collaboration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cfMessage">Message</label>
+          <textarea id="cfMessage" placeholder="How can we help you?"></textarea>
+        </div>
+        <div class="form-group" style="display:flex;align-items:center;gap:.6rem">
+          <input type="checkbox" id="cfConsent" style="width:auto;background:none;border:1px solid var(--border);padding:0;width:18px;height:18px;accent-color:var(--gold)">
+          <label for="cfConsent" style="font-size:.8rem;text-transform:none;letter-spacing:0;color:var(--text-muted);cursor:pointer">I agree to the <a href="privacy-policy.html" style="color:var(--gold)">Privacy Policy</a> and consent to being contacted.</label>
+        </div>
+        <button class="btn-primary" onclick="submitContact()" style="width:100%">Send Message</button>
+        <p style="font-size:.8rem;color:var(--text-muted);margin-top:1rem;text-align:center">Or book directly: <a href="book.html" style="color:var(--gold)">Online Booking →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="map-section" style="background:var(--black)">
+  <div class="container">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.9!2d-79.35!3d43.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s60+Lyndale+Ave%2C+Toronto%2C+ON!5e0!3m2!1sen!2sca!4v1"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Dom's Barber Lounge location map"
+        aria-label="Map showing Dom's Barber Lounge at 60 Lyndale Ave Toronto">
+      </iframe>
+      <div class="map-overlay-card">
+        <h3>Dom's Barber Lounge</h3>
+        <p>📍 60 Lyndale Ave, Toronto, ON</p>
+        <p class="gold">★★★★★ 5.0 · 127 reviews</p>
+        <p style="margin-top:.3rem">613-725-2222</p>
+        <div class="map-actions">
+          <a href="https://maps.google.com/?q=60+Lyndale+Ave+Toronto+Ontario" target="_blank" rel="noopener" class="map-dir">Get Directions</a>
+          <a href="tel:6137252222" class="map-call">📞 Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Practical Info -->
+<section class="practical-section">
+  <div class="container">
+    <p class="section-label">Getting Here</p>
+    <h2 class="section-title">Parking & <span class="gold">Transit</span></h2>
+    <div class="practical-grid">
+      <div class="practical-card">
+        <div class="icon">🚗</div>
+        <h3>Street Parking</h3>
+        <p>Free street parking available on Lyndale Ave and surrounding side streets. Typically easy to find within a 2-minute walk.</p>
+      </div>
+      <div class="practical-card">
+        <div class="icon">🚌</div>
+        <h3>TTC Bus</h3>
+        <p>Accessible via TTC bus routes serving the Leaside and East York areas. Multiple bus stops within walking distance.</p>
+      </div>
+      <div class="practical-card">
+        <div class="icon">🚇</div>
+        <h3>Subway</h3>
+        <p>Closest subway: Eglinton station. Combine with a short bus ride or 15-minute walk to reach us.</p>
+      </div>
+      <div class="practical-card">
+        <div class="icon">🚲</div>
+        <h3>Bike Friendly</h3>
+        <p>Bike racks available nearby. Toronto bike lanes make cycling a comfortable option from many east-end neighbourhoods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking-banner">
+  <div class="container" style="text-align:center">
+    <p class="section-label">Skip the Call</p>
+    <h2 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);color:var(--white);font-weight:300">Book Online in <span class="gold">60 Seconds</span></h2>
+    <p style="color:rgba(255,255,255,.7);margin:1rem 0 2.5rem">Choose your service, pick a time, and you're all set. No phone call needed.</p>
+    <a href="book.html" class="btn-primary">Book Now — It's Free</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Dom's <span>Barber</span> Lounge</div>
+        <p>Toronto's premier destination for precision cuts, fades, and luxury grooming.</p>
+      </div>
+      <div class="footer-links"><h4>Pages</h4><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="book.html">Book Now</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-contact"><h4>Contact</h4>
+        <p>📍 60 Lyndale Ave, Toronto, ON</p>
+        <p>📞 <a href="tel:6137252222">613-725-2222</a></p>
+        <p>✉ hello@domsbarberlounge.ca</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dom's Barber Lounge. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="book.html" class="sticky-book">Book Now</a>
+<a href="tel:6137252222" class="sticky-call">📞</a>
+
+<script src="../js/main.js"></script>
+<script>
+// Highlight today's hours
+const days = ['sun','mon','tue','wed','thu','fri','sat'];
+const today = days[new Date().getDay()];
+const todayRow = document.getElementById(today);
+if(todayRow) todayRow.classList.add('today');
+
+function submitContact() {
+  const name = document.getElementById('cfName').value.trim();
+  const email = document.getElementById('cfEmail').value.trim();
+  const msg = document.getElementById('cfMessage').value.trim();
+  const consent = document.getElementById('cfConsent').checked;
+  if(!name || !email || !msg) { alert('Please fill in all required fields.'); return; }
+  if(!consent) { alert('Please agree to the Privacy Policy to proceed.'); return; }
+  const btn = document.querySelector('.contact-form-wrap .btn-primary');
+  btn.textContent = '✓ Message Sent! We\'ll be in touch soon.';
+  btn.style.background = '#2d7a2d';
+  btn.disabled = true;
+  setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 5000);
+}
+</script>
+</body>
+</html>

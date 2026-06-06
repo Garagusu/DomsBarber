@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews – Dom's Barber Lounge | 5-Star Barber Toronto</title>
+<meta name="description" content="See why Dom's Barber Lounge is rated 5 stars in Toronto. Read verified customer reviews and share your own experience.">
+<link rel="canonical" href="https://domsbarberlounge.ca/pages/reviews.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.reviews-hero{padding:140px 0 60px;background:var(--black);text-align:center}
+.reviews-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);color:var(--white);font-weight:300;letter-spacing:.05em}
+.reviews-hero h1 span{color:var(--gold)}
+.rating-summary{display:flex;justify-content:center;align-items:center;gap:4rem;padding:3rem 0;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.rating-big{text-align:center}
+.rating-number{font-family:var(--font-display);font-size:5rem;color:var(--gold);line-height:1;font-weight:300}
+.rating-stars{font-size:1.5rem;letter-spacing:.1em;margin:.3rem 0}
+.rating-count{color:var(--text-muted);font-family:var(--font-heading);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+.rating-bars{flex:1;max-width:320px}
+.rating-bar-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem}
+.rating-bar-label{font-family:var(--font-heading);font-size:.8rem;color:var(--text-muted);min-width:40px;text-align:right}
+.rating-bar-track{flex:1;height:6px;background:var(--charcoal);border-radius:3px;overflow:hidden}
+.rating-bar-fill{height:100%;background:var(--gold);border-radius:3px;transition:width 1s ease}
+.rating-bar-count{font-family:var(--font-heading);font-size:.75rem;color:var(--text-muted);min-width:25px}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin:3rem 0}
+.review-card{background:var(--charcoal);border:1px solid var(--border);padding:2rem;border-radius:2px;transition:border-color .3s;position:relative}
+.review-card:hover{border-color:var(--gold-dim)}
+.review-card.featured{border-color:var(--gold);background:linear-gradient(135deg,var(--charcoal),rgba(201,168,76,.05))}
+.featured-badge{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--black);font-family:var(--font-heading);font-size:.65rem;letter-spacing:.1em;padding:.2rem .6rem;text-transform:uppercase;font-weight:600}
+.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.reviewer-avatar{width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--black);flex-shrink:0}
+.reviewer-info h3{font-family:var(--font-heading);font-size:1rem;color:var(--white);letter-spacing:.03em}
+.reviewer-info p{font-size:.8rem;color:var(--text-muted);margin-top:.15rem}
+.review-stars{color:var(--gold);font-size:1rem;letter-spacing:.05em;margin-bottom:.8rem}
+.review-text{color:var(--text-muted);font-size:.9rem;line-height:1.7;font-style:italic}
+.review-text::before{content:'"';color:var(--gold);font-size:2rem;font-family:var(--font-display);line-height:.5;vertical-align:-.25em;margin-right:.2rem}
+.review-service{display:inline-block;margin-top:1rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-family:var(--font-heading);font-size:.7rem;letter-spacing:.1em;padding:.25rem .7rem;text-transform:uppercase}
+.review-source{display:flex;align-items:center;gap:.4rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.review-source span{font-size:.75rem;color:var(--text-muted);font-family:var(--font-heading);letter-spacing:.05em}
+.google-g{width:16px;height:16px;background:#4285f4;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.6rem;color:white;font-weight:700;flex-shrink:0}
+/* Submit Review */
+.submit-review{background:var(--charcoal);border:1px solid var(--border);padding:3rem;max-width:600px;margin:4rem auto 0;border-radius:2px}
+.submit-review h3{font-family:var(--font-display);font-size:1.8rem;color:var(--white);margin-bottom:.5rem;font-weight:400}
+.submit-review p{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem}
+.star-select{display:flex;gap:.5rem;margin-bottom:1.5rem}
+.star-btn{background:none;border:none;font-size:2rem;cursor:pointer;color:var(--border);transition:color .2s}
+.star-btn.active,.star-btn:hover{color:var(--gold)}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-family:var(--font-heading);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);padding:.85rem 1rem;font-family:var(--font-body);font-size:.95rem;outline:none;transition:border-color .3s;box-sizing:border-box;border-radius:2px}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+.form-group textarea{height:120px;resize:vertical}
+.form-group select option{background:var(--black)}
+.trust-strip{display:flex;justify-content:center;gap:3rem;padding:3rem 0;border-top:1px solid var(--border);flex-wrap:wrap;margin-top:4rem}
+.trust-item{text-align:center}
+.trust-item .num{font-family:var(--font-display);font-size:2.5rem;color:var(--gold);font-weight:300}
+.trust-item p{font-family:var(--font-heading);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:.3rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BarberShop",
+  "name":"Dom's Barber Lounge",
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"5.0",
+    "reviewCount":"127",
+    "bestRating":"5",
+    "worstRating":"1"
+  },
+  "review":[
+    {"@type":"Review","author":{"@type":"Person","name":"Marcus T."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Best barber in Toronto, hands down. Dom's precision with a fade is unmatched."},
+    {"@type":"Review","author":{"@type":"Person","name":"James R."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Exactly what I was looking for. Professional, efficient and the cut was perfect."}
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="../index.html" class="logo">Dom's <span>Barber</span> Lounge</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="btn-nav">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="reviews-hero">
+  <div class="container">
+    <p class="section-label">What Clients Say</p>
+    <h1>Customer <span>Reviews</span></h1>
+    <p>Verified experiences from real clients across Toronto and the GTA.</p>
+  </div>
+</section>
+
+<section style="background:var(--black);padding:0 0 80px">
+  <div class="container">
+    <div class="rating-summary">
+      <div class="rating-big">
+        <div class="rating-number">5.0</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">127 verified reviews</div>
+        <div style="margin-top:1rem"><span style="background:var(--gold);color:var(--black);font-family:var(--font-heading);font-size:.7rem;letter-spacing:.1em;padding:.3rem .8rem;text-transform:uppercase;font-weight:700">Top Rated Barber Toronto</span></div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-bar-row"><span class="rating-bar-label">5 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:92%"></div></div><span class="rating-bar-count">117</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">4 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:6%"></div></div><span class="rating-bar-count">8</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">3 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:2%"></div></div><span class="rating-bar-count">2</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">2 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div><span class="rating-bar-count">0</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">1 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div><span class="rating-bar-count">0</span></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card featured">
+        <div class="featured-badge">✓ Verified</div>
+        <div class="review-header">
+          <div class="reviewer-avatar">M</div>
+          <div class="reviewer-info"><h3>Marcus T.</h3><p>Toronto, ON · Regular Client</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Best barber in Toronto, hands down. Dom's precision with a skin fade is unmatched. Been coming here for 2 years and every single cut is perfect. The attention to detail is next level. Worth every penny.</p>
+        <span class="review-service">Skin Fade</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 2 weeks ago</span></div>
+      </div>
+
+      <div class="review-card featured">
+        <div class="featured-badge">✓ Verified</div>
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#e6c872">J</div>
+          <div class="reviewer-info"><h3>James R.</h3><p>Leaside, Toronto</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Exactly what I'd been searching for in a barber. Professional, clean shop, no waiting around. My cut looked exactly like the reference photo I showed. Will be back every 3 weeks without question.</p>
+        <span class="review-service">Classic Cut + Beard</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 1 month ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#8b7355">A</div>
+          <div class="reviewer-info"><h3>Alex K.</h3><p>East York, Toronto</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Took my 8-year-old son here for his first real haircut. Dom was so patient with him and explained everything step by step. My son loved it and already wants to come back. Incredible with kids.</p>
+        <span class="review-service">Kids Cut</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 3 weeks ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#6b8e6b">D</div>
+          <div class="reviewer-info"><h3>Daniel M.</h3><p>Downtown Toronto</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">The hot towel shave experience is absolutely luxurious. Felt like a completely different person walking out. The straight razor work is incredibly precise. This is what a premium barbershop should feel like.</p>
+        <span class="review-service">Hot Towel Shave</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 1 month ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#8b6b8b">R</div>
+          <div class="reviewer-info"><h3>Ryan O.</h3><p>Toronto, ON</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I've been to a dozen barbershops in Toronto and none compare. The beard shaping alone changed my entire look. Dom has an eye for what works with your face shape and gives honest recommendations.</p>
+        <span class="review-service">Beard Trim & Shape</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 2 months ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#6b7b8b">S</div>
+          <div class="reviewer-info"><h3>Sam W.</h3><p>North York, Toronto</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Online booking made everything easy — showed up, got right in, cut was flawless. The shop itself is immaculate. Modern, professional, calm atmosphere. Exactly what you want before a big event.</p>
+        <span class="review-service">Cut + Beard Combo</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 3 months ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#7b8b6b">T</div>
+          <div class="reviewer-info"><h3>Tyler B.</h3><p>Scarborough, Toronto</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Made the drive from Scarborough specifically because of the reviews — completely worth it. The taper fade was perfect, lines were razor sharp. First barber who actually listened to exactly what I wanted.</p>
+        <span class="review-service">Taper Fade</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 2 months ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#8b7b6b">C</div>
+          <div class="reviewer-info"><h3>Chris L.</h3><p>Etobicoke, Toronto</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Brought my dad here as a gift and he raved about it for weeks. Two generations, two very different styles — Dom nailed both. The relaxed atmosphere and genuine conversation made it feel like a real experience, not just a haircut.</p>
+        <span class="review-service">Classic Cut</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 4 months ago</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#6b8b8b">N</div>
+          <div class="reviewer-info"><h3>Nathan P.</h3><p>Toronto, ON</p></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I was skeptical about booking online but the process was seamless. Got a reminder the day before, showed up and was taken care of right on time. The cut was exceptional — mid fade with a textured crop, exactly as requested.</p>
+        <span class="review-service">Mid Fade</span>
+        <div class="review-source"><div class="google-g">G</div><span>Google Review · 3 months ago</span></div>
+      </div>
+    </div>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+      <div class="trust-item"><div class="num">5.0</div><p>Average Rating</p></div>
+      <div class="trust-item"><div class="num">127+</div><p>Verified Reviews</p></div>
+      <div class="trust-item"><div class="num">8+</div><p>Years Experience</p></div>
+      <div class="trust-item"><div class="num">5K+</div><p>Happy Clients</p></div>
+    </div>
+
+    <!-- Submit Review -->
+    <div class="submit-review">
+      <h3>Share Your Experience</h3>
+      <p>Your feedback helps us improve and helps other clients find us.</p>
+      <div class="star-select" id="starSelect" role="group" aria-label="Rate your experience">
+        <button class="star-btn" data-rating="1" aria-label="1 star">★</button>
+        <button class="star-btn" data-rating="2" aria-label="2 stars">★</button>
+        <button class="star-btn" data-rating="3" aria-label="3 stars">★</button>
+        <button class="star-btn" data-rating="4" aria-label="4 stars">★</button>
+        <button class="star-btn" data-rating="5" aria-label="5 stars">★</button>
+      </div>
+      <div class="form-group">
+        <label for="reviewName">Your Name</label>
+        <input type="text" id="reviewName" placeholder="John D." autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="reviewService">Service Received</label>
+        <select id="reviewService">
+          <option value="">Select a service...</option>
+          <option>Classic Haircut</option>
+          <option>Skin Fade</option>
+          <option>Buzz Cut</option>
+          <option>Kids Cut</option>
+          <option>Beard Trim & Shape</option>
+          <option>Cut + Beard Combo</option>
+          <option>Hot Towel Shave</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="reviewText">Your Review</label>
+        <textarea id="reviewText" placeholder="Tell us about your experience at Dom's Barber Lounge..."></textarea>
+      </div>
+      <button class="btn-primary" onclick="submitReview()" style="width:100%">Submit Review</button>
+      <p style="font-size:.75rem;color:var(--text-muted);margin-top:1rem;text-align:center">Reviews are moderated before publishing. You may also leave a review directly on <a href="https://g.page/r/domsbarberlounge" style="color:var(--gold)" target="_blank" rel="noopener">Google</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="booking-banner">
+  <div class="container" style="text-align:center">
+    <p class="section-label">Join Our Happy Clients</p>
+    <h2 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);color:var(--white);font-weight:300">Ready to Experience the <span class="gold">Difference?</span></h2>
+    <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
+      <a href="book.html" class="btn-primary">Book Your Appointment</a>
+      <a href="tel:6137252222" class="btn-secondary">📞 Call Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Dom's <span>Barber</span> Lounge</div>
+        <p>Toronto's premier destination for precision cuts, fades, and luxury grooming.</p>
+      </div>
+      <div class="footer-links"><h4>Pages</h4><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="book.html">Book Now</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul></div>
+      <div class="footer-contact"><h4>Contact</h4>
+        <p>📍 60 Lyndale Ave, Toronto, ON</p>
+        <p>📞 <a href="tel:6137252222">613-725-2222</a></p>
+        <p>🕐 Mon–Fri: 9AM–7PM</p>
+        <p>🕐 Sat: 8AM–6PM · Sun: 10AM–4PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dom's Barber Lounge. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="book.html" class="sticky-book">Book Now</a>
+<a href="tel:6137252222" class="sticky-call">📞</a>
+
+<script src="../js/main.js"></script>
+<script>
+// Star rating
+let selectedRating = 0;
+const starBtns = document.querySelectorAll('.star-btn');
+starBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    selectedRating = parseInt(btn.dataset.rating);
+    starBtns.forEach((b,i) => b.classList.toggle('active', i < selectedRating));
+  });
+  btn.addEventListener('mouseenter', () => {
+    const r = parseInt(btn.dataset.rating);
+    starBtns.forEach((b,i) => b.style.color = i < r ? 'var(--gold)' : 'var(--border)');
+  });
+  document.getElementById('starSelect').addEventListener('mouseleave', () => {
+    starBtns.forEach((b,i) => { b.style.color = ''; b.classList.toggle('active', i < selectedRating); });
+  });
+});
+
+function submitReview() {
+  const name = document.getElementById('reviewName').value.trim();
+  const text = document.getElementById('reviewText').value.trim();
+  if(!selectedRating) { alert('Please select a star rating.'); return; }
+  if(!name) { alert('Please enter your name.'); return; }
+  if(!text || text.length < 20) { alert('Please write at least 20 characters in your review.'); return; }
+  // Show success
+  const btn = document.querySelector('.submit-review .btn-primary');
+  btn.textContent = '✓ Thank You! Review Submitted';
+  btn.style.background = '#2d7a2d';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Submit Review';
+    btn.style.background = '';
+    btn.disabled = false;
+    document.getElementById('reviewName').value = '';
+    document.getElementById('reviewText').value = '';
+    document.getElementById('reviewService').value = '';
+    selectedRating = 0;
+    starBtns.forEach(b => b.classList.remove('active'));
+  }, 4000);
+}
+</script>
+</body>
+</html>

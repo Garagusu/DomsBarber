@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dom's Barber Lounge | Best Barber in Toronto | 60 Lyndale Ave</title>
+  <meta name="description" content="Dom's Barber Lounge – Toronto's premium barbershop at 60 Lyndale Ave. Expert fades, beard trims & luxury grooming. Book online today. Call 613-725-2222." />
+  <meta name="keywords" content="barber Toronto, best barber Toronto, fade haircut Toronto, beard trim Toronto, luxury barber Toronto, barber near me, men's haircut Toronto, barber Leaside, barber East York" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://domsbarberlounge.ca/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dom's Barber Lounge | Premium Barbershop Toronto" />
+  <meta property="og:description" content="Toronto's premier barbershop. Expert fades, beard trims & luxury grooming at 60 Lyndale Ave." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://domsbarberlounge.ca/" />
+  <meta property="og:image" content="https://domsbarberlounge.ca/images/og-image.jpg" />
+  <meta property="og:locale" content="en_CA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dom's Barber Lounge | Premium Barbershop Toronto" />
+  <meta name="twitter:description" content="Expert fades, beard trims & luxury grooming in Toronto." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Dom's Barber Lounge",
+    "image": "https://domsbarberlounge.ca/images/og-image.jpg",
+    "telephone": "613-725-2222",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "60 Lyndale Ave",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M4G 2W1",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.7058,
+      "longitude": -79.3594
+    },
+    "url": "https://domsbarberlounge.ca",
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"15:00"}
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "148"
+    },
+    "priceRange": "$$",
+    "servesCuisine": "Barbershop"
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How do I book an appointment?","acceptedAnswer":{"@type":"Answer","text":"You can book online through our website, call us at 613-725-2222, or walk in."}},
+      {"@type":"Question","name":"Do you accept walk-ins?","acceptedAnswer":{"@type":"Answer","text":"Yes, we accept walk-ins based on availability. Booking ahead is recommended."}},
+      {"@type":"Question","name":"How much is a haircut at Dom's?","acceptedAnswer":{"@type":"Answer","text":"Classic cuts start from $30. Premium services range from $45–$75. See our full pricing page."}}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookieBanner" class="cookie-banner" role="alert" aria-live="polite">
+  <div class="cookie-content">
+    <p>We use cookies to enhance your experience and improve our services. <a href="pages/cookie-policy.html">Learn more</a></p>
+    <div class="cookie-btns">
+      <button onclick="acceptCookies()" class="btn-gold">Accept All</button>
+      <button onclick="declineCookies()" class="btn-outline-sm">Decline</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="logo" aria-label="Dom's Barber Lounge Home">
+      <span class="logo-icon">✦</span>
+      <div class="logo-text">
+        <span class="logo-main">DOM'S</span>
+        <span class="logo-sub">BARBER LOUNGE</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="pages/about.html" class="nav-link">About</a></li>
+      <li><a href="pages/services.html" class="nav-link">Services</a></li>
+      <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="pages/reviews.html" class="nav-link">Reviews</a></li>
+      <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+      <li><a href="pages/faq.html" class="nav-link">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:6137252222" class="btn-call" aria-label="Call Dom's Barber Lounge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        613-725-2222
+      </a>
+      <a href="pages/book.html" class="btn-gold">Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pages/about.html">About</a></li>
+    <li><a href="pages/services.html">Services</a></li>
+    <li><a href="pages/gallery.html">Gallery</a></li>
+    <li><a href="pages/reviews.html">Reviews</a></li>
+    <li><a href="pages/contact.html">Contact</a></li>
+    <li><a href="pages/faq.html">FAQ</a></li>
+    <li><a href="pages/book.html" class="btn-gold" style="display:inline-block;margin-top:1rem;">Book Now</a></li>
+  </ul>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home" aria-label="Hero section">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-gradient"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="star">★★★★★</span>
+      <span>4.9 · 148 Reviews · Toronto's #1 Barbershop</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">PRECISION.</span>
+      <span class="title-line gold">CRAFT.</span>
+      <span class="title-line">EXCELLENCE.</span>
+    </h1>
+    <p class="hero-sub">Toronto's premier destination for luxury grooming.<br>60 Lyndale Ave · East York · By Appointment & Walk-ins Welcome</p>
+    <div class="hero-btns">
+      <a href="pages/book.html" class="btn-gold btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+        Book Appointment
+      </a>
+      <a href="tel:6137252222" class="btn-outline btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">5,000+</span><span class="stat-label">Happy Clients</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Google Rating</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar" aria-label="Trust indicators">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg width="22" height="22" fill="var(--gold)" viewBox="0 0 24 24"><path d="M12 1l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16l-6.2 4.3 2.4-7.4L2 8.4h7.6z"/></svg>
+        <span>Toronto's #1 Rated</span>
+      </div>
+      <div class="trust-item">
+        <svg width="22" height="22" fill="var(--gold)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Walk-ins Welcome</span>
+      </div>
+      <div class="trust-item">
+        <svg width="22" height="22" fill="var(--gold)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        <span>Online Booking Available</span>
+      </div>
+      <div class="trust-item">
+        <svg width="22" height="22" fill="var(--gold)" viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        <span>Same-Day Appointments</span>
+      </div>
+      <div class="trust-item">
+        <svg width="22" height="22" fill="var(--gold)" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7l7-7-1.414-1.414L11 12.172l-2.828-2.828-1.414 1.414L11 15z"/></svg>
+        <span>8+ Years of Excellence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="services-section section" id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">WHAT WE OFFER</span>
+      <h2 id="services-heading" class="section-title">Premium <span class="gold">Services</span></h2>
+      <p class="section-sub">Every service is a craft. Every client leaves confident.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Classic Haircut</h3>
+        <p>Precision scissors and clipper work tailored to your face shape and lifestyle.</p>
+        <span class="price">From $30</span>
+        <a href="pages/services.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-badge">Most Popular</div>
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+        <h3>Skin Fade</h3>
+        <p>Flawless gradient fades that turn heads. The signature service of Dom's Lounge.</p>
+        <span class="price">From $40</span>
+        <a href="pages/services.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Beard Trim & Shape</h3>
+        <p>Expert beard sculpting to enhance your jawline and personal style.</p>
+        <span class="price">From $25</span>
+        <a href="pages/services.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Hot Towel Shave</h3>
+        <p>Indulge in a traditional straight-razor hot towel shave for the ultimate grooming experience.</p>
+        <span class="price">From $45</span>
+        <a href="pages/services.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Cut + Beard Combo</h3>
+        <p>Complete grooming package — haircut and beard service for the full transformation.</p>
+        <span class="price">From $55</span>
+        <a href="pages/services.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Kids Haircut</h3>
+        <p>Patient, fun and expert cuts for the young gentlemen. Ages 12 and under.</p>
+        <span class="price">From $22</span>
+        <a href="pages/services.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="pages/services.html" class="btn-outline">View All Services & Pricing</a>
+      <a href="pages/book.html" class="btn-gold">Book Your Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER GALLERY -->
+<section class="gallery-section section dark-section" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">THE CRAFT</span>
+      <h2 id="gallery-heading" class="section-title">Before &amp; <span class="gold">After</span></h2>
+      <p class="section-sub">Real clients. Real transformations. Every time.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" tabindex="0" role="button" aria-label="View transformation 1">
+        <div class="before-after">
+          <div class="ba-img before">
+            <div class="ba-overlay">BEFORE</div>
+            <div class="placeholder-img" style="background: linear-gradient(135deg,#2a2a2a,#1a1a1a)">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="var(--gold-dim)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+          </div>
+          <div class="ba-img after">
+            <div class="ba-overlay gold-overlay">AFTER</div>
+            <div class="placeholder-img" style="background: linear-gradient(135deg,#1a1a1a,#0a0a0a)">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-info"><h4>High Skin Fade</h4><span>Classic transformation</span></div>
+      </div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="View transformation 2">
+        <div class="before-after">
+          <div class="ba-img before">
+            <div class="ba-overlay">BEFORE</div>
+            <div class="placeholder-img" style="background: linear-gradient(135deg,#333,#1a1a1a)">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="var(--gold-dim)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+          </div>
+          <div class="ba-img after">
+            <div class="ba-overlay gold-overlay">AFTER</div>
+            <div class="placeholder-img" style="background: linear-gradient(135deg,#111,#080808)">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-info"><h4>Beard Sculpt</h4><span>Full beard shaping</span></div>
+      </div>
+      <div class="gallery-item" tabindex="0" role="button" aria-label="View transformation 3">
+        <div class="before-after">
+          <div class="ba-img before">
+            <div class="ba-overlay">BEFORE</div>
+            <div class="placeholder-img" style="background: linear-gradient(135deg,#2d2d2d,#111)">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="var(--gold-dim)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+          </div>
+          <div class="ba-img after">
+            <div class="ba-overlay gold-overlay">AFTER</div>
+            <div class="placeholder-img" style="background: linear-gradient(135deg,#181818,#050505)">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-info"><h4>Cut + Beard Combo</h4><span>Complete makeover</span></div>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="pages/gallery.html" class="btn-outline">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section section" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-content">
+        <span class="section-label">WHY DOM'S?</span>
+        <h2 id="why-heading" class="section-title">Toronto's Most <span class="gold">Trusted</span> Barbershop</h2>
+        <p class="why-desc">At Dom's Barber Lounge, we've built a reputation for precision, consistency, and a premium experience you won't find anywhere else in Toronto.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-icon">✦</div>
+            <div>
+              <h4>Master-Level Craftsmanship</h4>
+              <p>8+ years of experience with ongoing education in the latest techniques.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✦</div>
+            <div>
+              <h4>Premium Products Only</h4>
+              <p>We use top-tier grooming brands — your hair and skin deserve the best.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✦</div>
+            <div>
+              <h4>Consistent Results</h4>
+              <p>You'll get the same perfect cut every single time. No surprises.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✦</div>
+            <div>
+              <h4>Relaxed, Welcoming Atmosphere</h4>
+              <p>A lounge-style environment where you can unwind while looking your best.</p>
+            </div>
+          </div>
+        </div>
+        <a href="pages/about.html" class="btn-gold" style="margin-top:2rem;display:inline-block;">Meet Dom</a>
+      </div>
+      <div class="why-visual">
+        <div class="why-card">
+          <div class="why-number">4.9<span>★</span></div>
+          <p>Google Rating</p>
+          <div class="stars-row">★★★★★</div>
+          <span>148 verified reviews</span>
+        </div>
+        <div class="why-badge-grid">
+          <div class="badge-item">
+            <span class="badge-num">8+</span>
+            <span>Years</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-num">5K+</span>
+            <span>Clients</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-num">100%</span>
+            <span>Satisfaction</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-num">#1</span>
+            <span>East York</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section section dark-section" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">TESTIMONIALS</span>
+      <h2 id="reviews-heading" class="section-title">What Clients <span class="gold">Say</span></h2>
+      <div class="rating-summary">
+        <span class="big-rating">4.9</span>
+        <div>
+          <div class="stars-row">★★★★★</div>
+          <span>Based on 148 Google Reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card" data-aos="fade-up">
+        <div class="review-header">
+          <div class="reviewer-avatar">M</div>
+          <div>
+            <h4>Marcus T.</h4>
+            <div class="stars-row small">★★★★★</div>
+          </div>
+          <div class="google-icon" aria-label="Google review">G</div>
+        </div>
+        <p>"Dom is genuinely one of the best barbers I've ever been to. The fade is always crisp, consistent, and the vibe in the shop is unmatched. Never going anywhere else."</p>
+        <span class="review-date">2 weeks ago</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:var(--gold);">J</div>
+          <div>
+            <h4>James P.</h4>
+            <div class="stars-row small">★★★★★</div>
+          </div>
+          <div class="google-icon" aria-label="Google review">G</div>
+        </div>
+        <p>"Best barber in Toronto, no question. Professional, clean, and the attention to detail is incredible. My beard has never looked this sharp. Highly recommend!"</p>
+        <span class="review-date">1 month ago</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#2d6a4f;">A</div>
+          <div>
+            <h4>Alex R.</h4>
+            <div class="stars-row small">★★★★★</div>
+          </div>
+          <div class="google-icon" aria-label="Google review">G</div>
+        </div>
+        <p>"Found Dom's through a Google search and so glad I did. Came in for a skin fade and honestly it was the cleanest cut I've ever had. The atmosphere is premium and relaxed."</p>
+        <span class="review-date">3 weeks ago</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#7b2d8b;">D</div>
+          <div>
+            <h4>Daniel K.</h4>
+            <div class="stars-row small">★★★★★</div>
+          </div>
+          <div class="google-icon" aria-label="Google review">G</div>
+        </div>
+        <p>"Brought my son here for the first time — Dom was so patient and did an amazing job. He was a little nervous but left smiling. We're regulars now."</p>
+        <span class="review-date">2 months ago</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#c05621;">R</div>
+          <div>
+            <h4>Ryan S.</h4>
+            <div class="stars-row small">★★★★★</div>
+          </div>
+          <div class="google-icon" aria-label="Google review">G</div>
+        </div>
+        <p>"The hot towel shave alone is worth every penny. Felt like royalty. Dom is a true craftsman. If you're in Toronto and haven't been here, you're missing out."</p>
+        <span class="review-date">1 month ago</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:#1a5276;">T</div>
+          <div>
+            <h4>Tony M.</h4>
+            <div class="stars-row small">★★★★★</div>
+          </div>
+          <div class="google-icon" aria-label="Google review">G</div>
+        </div>
+        <p>"I've been going to Dom for 3 years and it's always a 10/10. Easy booking, never a long wait, and the cuts are always perfect. Best barber in East York."</p>
+        <span class="review-date">3 weeks ago</span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="pages/reviews.html" class="btn-outline">See All Reviews</a>
+      <a href="https://g.page/domsbarberlounge/review" target="_blank" rel="noopener noreferrer" class="btn-gold">Leave a Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEET THE BARBER -->
+<section class="meet-section section" aria-labelledby="meet-heading">
+  <div class="container">
+    <div class="meet-layout">
+      <div class="meet-visual">
+        <div class="meet-photo-frame">
+          <div class="meet-photo-placeholder">
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--gold)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>DOM</span>
+          </div>
+          <div class="meet-badge-floating">
+            <span>✦</span>
+            <span>Master Barber</span>
+          </div>
+        </div>
+      </div>
+      <div class="meet-content">
+        <span class="section-label">MEET YOUR BARBER</span>
+        <h2 id="meet-heading" class="section-title">The Man <span class="gold">Behind the Chair</span></h2>
+        <p class="meet-desc">Dom is more than a barber — he's a craftsman who has dedicated over 8 years to perfecting the art of men's grooming. Trained in classic barbering techniques with a modern edge, he brings precision, care, and passion to every single cut.</p>
+        <p class="meet-desc">Located in the heart of East York at 60 Lyndale Ave, Dom's Barber Lounge is a place where you come for a haircut and leave feeling like the best version of yourself.</p>
+        <div class="meet-credentials">
+          <div class="credential">
+            <span class="credential-icon">✦</span>
+            <span>Licensed Master Barber — Province of Ontario</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">✦</span>
+            <span>Specialist in Skin Fades & Beard Sculpting</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">✦</span>
+            <span>8+ Years Professional Experience</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">✦</span>
+            <span>Serving Toronto & East York Since 2016</span>
+          </div>
+        </div>
+        <a href="pages/about.html" class="btn-gold" style="margin-top:2rem;display:inline-block;">Full Bio & Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA BANNER -->
+<section class="booking-banner" aria-labelledby="booking-heading">
+  <div class="banner-bg"></div>
+  <div class="container">
+    <div class="banner-content">
+      <h2 id="booking-heading">Ready for Your <span class="gold">Best Cut Ever?</span></h2>
+      <p>Book online in seconds. Same-day appointments available.</p>
+      <div class="banner-btns">
+        <a href="pages/book.html" class="btn-gold btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+          Book Appointment
+        </a>
+        <a href="tel:6137252222" class="btn-outline btn-lg">Call 613-725-2222</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="location-section section" id="location" aria-labelledby="location-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">FIND US</span>
+      <h2 id="location-heading" class="section-title">Hours &amp; <span class="gold">Location</span></h2>
+    </div>
+    <div class="location-layout">
+      <div class="location-info">
+        <div class="info-block">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Address
+          </h3>
+          <p>60 Lyndale Ave<br>Toronto, Ontario<br>Canada</p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=60+Lyndale+Ave+Toronto+Ontario" target="_blank" rel="noopener noreferrer" class="btn-outline-sm">Get Directions →</a>
+        </div>
+        <div class="info-block">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+            Business Hours
+          </h3>
+          <table class="hours-table">
+            <tr><td>Monday – Friday</td><td class="hours-open">9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Saturday</td><td class="hours-open">9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Sunday</td><td class="hours-open">10:00 AM – 3:00 PM</td></tr>
+          </table>
+        </div>
+        <div class="info-block">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            Contact
+          </h3>
+          <p><a href="tel:6137252222" class="gold-link">613-725-2222</a></p>
+          <p><a href="mailto:hello@domsbarberlounge.ca" class="gold-link">hello@domsbarberlounge.ca</a></p>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe
+          title="Dom's Barber Lounge Location - 60 Lyndale Ave Toronto"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.5!2d-79.3594!3d43.7058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s60+Lyndale+Ave%2C+Toronto%2C+ON!5e0!3m2!1sen!2sca!4v1234567890"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Google Maps showing Dom's Barber Lounge at 60 Lyndale Ave Toronto">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="faq-section section dark-section" id="faq" aria-labelledby="faq-heading">
+  <div class="container faq-container">
+    <div class="section-header">
+      <span class="section-label">COMMON QUESTIONS</span>
+      <h2 id="faq-heading" class="section-title">Frequently Asked <span class="gold">Questions</span></h2>
+    </div>
+    <div class="faq-list" role="list">
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+          <span>Do I need to book in advance?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq1" class="faq-answer" hidden>
+          <p>Walk-ins are always welcome based on availability. To guarantee your preferred time, we strongly recommend booking online or calling ahead. Same-day bookings are often available.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+          <span>How long does a haircut take?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq2" class="faq-answer" hidden>
+          <p>A standard haircut takes approximately 30–45 minutes. Beard trims add 15–20 minutes. Combo services (cut + beard) are typically 60 minutes. Hot towel shaves take around 45 minutes.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+          <span>What payment methods do you accept?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq3" class="faq-answer" hidden>
+          <p>We accept cash, all major credit/debit cards, and e-Transfer. Tap-to-pay is available at the shop.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+          <span>Do you cut kids' hair?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq4" class="faq-answer" hidden>
+          <p>Absolutely! We love working with young clients. Kids' cuts (ages 12 and under) start from $22. We're patient, friendly, and experienced with all hair types.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+          <span>What's your cancellation policy?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq5" class="faq-answer" hidden>
+          <p>We appreciate at least 24 hours' notice for cancellations or reschedules. You can manage your booking through our online system, or call/text us directly at 613-725-2222.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+          <span>Where is Dom's Barber Lounge located?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq6" class="faq-answer" hidden>
+          <p>We're located at 60 Lyndale Ave, Toronto, Ontario — in the heart of East York. Easy street parking is available and we're accessible by TTC.</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="pages/faq.html" class="btn-outline">More FAQs</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER / LEAD GEN -->
+<section class="newsletter-section section" aria-labelledby="newsletter-heading">
+  <div class="container">
+    <div class="newsletter-box">
+      <div class="newsletter-content">
+        <span class="section-label">STAY IN THE LOOP</span>
+        <h2 id="newsletter-heading">Get <span class="gold">Exclusive Offers</span> & Style Tips</h2>
+        <p>Join 800+ Toronto men who get first access to promotions, new services, and grooming tips delivered to their inbox.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup form" novalidate>
+        <div class="form-group-inline">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" autocomplete="email" />
+          <button type="submit" class="btn-gold">Subscribe</button>
+        </div>
+        <p class="form-note">No spam. Unsubscribe anytime. <a href="pages/privacy-policy.html">Privacy Policy</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Dom's Barber Lounge Home">
+            <span class="logo-icon">✦</span>
+            <div class="logo-text">
+              <span class="logo-main">DOM'S</span>
+              <span class="logo-sub">BARBER LOUNGE</span>
+            </div>
+          </a>
+          <p>Toronto's premier destination for luxury grooming. Precision cuts, expert fades, and world-class beard services at 60 Lyndale Ave, East York.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="pages/about.html">About Dom</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+            <li><a href="pages/reviews.html">Reviews</a></li>
+            <li><a href="pages/book.html">Book Appointment</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="pages/services.html">Classic Haircut</a></li>
+            <li><a href="pages/services.html">Skin Fade</a></li>
+            <li><a href="pages/services.html">Beard Trim &amp; Shape</a></li>
+            <li><a href="pages/services.html">Hot Towel Shave</a></li>
+            <li><a href="pages/services.html">Cut + Beard Combo</a></li>
+            <li><a href="pages/services.html">Kids Haircut</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>60 Lyndale Ave<br>Toronto, Ontario, Canada</p>
+          <p><a href="tel:6137252222" class="gold-link">613-725-2222</a></p>
+          <p><a href="mailto:hello@domsbarberlounge.ca" class="gold-link">hello@domsbarberlounge.ca</a></p>
+          <br>
+          <h4 style="margin-top:0.5rem">Hours</h4>
+          <p style="font-size:0.85rem;line-height:1.8;">Mon–Fri: 9am–7pm<br>Saturday: 9am–5pm<br>Sunday: 10am–3pm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2024 Dom's Barber Lounge. All rights reserved. | <a href="pages/privacy-policy.html">Privacy Policy</a> | <a href="pages/terms.html">Terms &amp; Conditions</a> | <a href="pages/cookie-policy.html">Cookie Policy</a></p>
+      <p class="seo-text">Best barber in Toronto · Barber near me · Fade haircut Toronto · Beard trim Toronto · Barber East York · Luxury barber Toronto</p>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY BOOKING BUTTON (Mobile) -->
+<div class="sticky-book" aria-label="Quick booking options">
+  <a href="tel:6137252222" class="sticky-call" aria-label="Call us">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+  <a href="pages/book.html" class="sticky-book-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+    Book Now
+  </a>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<div class="chat-widget" id="chatWidget" aria-live="polite">
+  <button class="chat-toggle" id="chatToggle" aria-label="Open AI chat assistant" aria-expanded="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <span class="chat-badge">AI</span>
+  </button>
+  <div class="chat-box" id="chatBox" hidden role="dialog" aria-label="AI Chat Assistant">
+    <div class="chat-header">
+      <div class="chat-avatar">✦</div>
+      <div>
+        <strong>Dom's AI Assistant</strong>
+        <span class="chat-status">● Online</span>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+      <div class="chat-msg bot">
+        <p>Hey! 👋 I'm Dom's AI assistant. I can help you with:</p>
+        <div class="chat-chips">
+          <button onclick="chatSend('What services do you offer?')">Services & Pricing</button>
+          <button onclick="chatSend('How do I book?')">Book Appointment</button>
+          <button onclick="chatSend('What are your hours?')">Hours & Location</button>
+          <button onclick="chatSend('Recommend a hairstyle for me')">Hairstyle Advice</button>
+        </div>
+      </div>
+    </div>
+    <form class="chat-input" onsubmit="handleChatSubmit(event)" aria-label="Chat message input">
+      <input type="text" id="chatInput" placeholder="Ask me anything..." aria-label="Type your message" autocomplete="off" />
+      <button type="submit" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </form>
+    <p class="chat-footer-note">Powered by Claude AI</p>
+  </div>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-popup" id="exitPopup" hidden role="dialog" aria-modal="true" aria-labelledby="exit-heading">
+  <div class="exit-backdrop" onclick="closeExitPopup()"></div>
+  <div class="exit-content">
+    <button class="exit-close" onclick="closeExitPopup()" aria-label="Close popup">✕</button>
+    <div class="exit-badge">LIMITED OFFER</div>
+    <h2 id="exit-heading">Wait! Don't miss out</h2>
+    <p>Book today and mention <strong>"FIRSTCUT"</strong> for <span class="gold">$5 off your first service.</span></p>
+    <a href="pages/book.html" class="btn-gold" onclick="closeExitPopup()">Claim My Discount</a>
+    <button class="btn-text" onclick="closeExitPopup()">No thanks, I'll pay full price</button>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF NOTIFICATION -->
+<div class="social-proof" id="socialProof" aria-live="polite" aria-label="Recent booking notification"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

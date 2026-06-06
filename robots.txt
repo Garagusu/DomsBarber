@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (add as needed)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://domsbarberlounge.ca/sitemap.xml
+
+# Crawl-delay (optional, respect server)
+Crawl-delay: 1

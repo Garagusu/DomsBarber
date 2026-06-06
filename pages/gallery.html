@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery – Dom's Barber Lounge | Best Haircuts & Fades Toronto</title>
+<meta name="description" content="Browse our gallery of premium haircuts, fades, beard trims and transformations at Dom's Barber Lounge in Toronto. See the quality before you book.">
+<link rel="canonical" href="https://domsbarberlounge.ca/pages/gallery.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.gallery-hero{padding:140px 0 60px;background:var(--black);text-align:center}
+.gallery-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);color:var(--white);font-weight:300;letter-spacing:0.05em}
+.gallery-hero h1 span{color:var(--gold)}
+.gallery-hero p{color:var(--text-muted);font-size:1.1rem;margin-top:1rem}
+.gallery-filters{display:flex;justify-content:center;gap:1rem;padding:2.5rem 0 3rem;flex-wrap:wrap}
+.filter-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:.6rem 1.6rem;border-radius:2px;font-family:var(--font-heading);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.filter-btn.active,.filter-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px;padding:0 0 80px}
+.gallery-item{position:relative;overflow:hidden;aspect-ratio:1;cursor:pointer;background:var(--charcoal)}
+.gallery-item img,.gallery-item .gallery-placeholder{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--charcoal),#1a1a1a);color:var(--text-muted)}
+.gallery-placeholder .icon{font-size:2.5rem;margin-bottom:.5rem;opacity:.4}
+.gallery-placeholder span{font-family:var(--font-heading);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;opacity:.4}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 60%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:1.5rem}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-item:hover img,.gallery-item:hover .gallery-placeholder{transform:scale(1.05)}
+.gallery-info h3{font-family:var(--font-heading);font-size:1rem;color:var(--white);letter-spacing:.05em;text-transform:uppercase}
+.gallery-info p{font-size:.8rem;color:var(--gold);margin-top:.2rem}
+.gallery-zoom{position:absolute;top:1rem;right:1rem;width:36px;height:36px;background:var(--gold);display:flex;align-items:center;justify-content:center;border-radius:50%;opacity:0;transition:opacity .3s;font-size:.9rem;color:var(--black)}
+.gallery-item:hover .gallery-zoom{opacity:1}
+/* Before/After Section */
+.before-after-section{padding:80px 0;background:var(--charcoal)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;margin-top:3rem}
+.ba-card{background:var(--black);border:1px solid var(--border);overflow:hidden;border-radius:2px}
+.ba-images{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.ba-img{aspect-ratio:1;background:linear-gradient(135deg,#1a1a1a,#252525);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-muted);position:relative}
+.ba-label{position:absolute;top:.5rem;left:.5rem;background:var(--gold);color:var(--black);font-family:var(--font-heading);font-size:.65rem;letter-spacing:.1em;padding:.2rem .5rem;font-weight:600;text-transform:uppercase}
+.ba-label.after{background:var(--white)}
+.ba-img .icon{font-size:2rem;opacity:.3}
+.ba-card-info{padding:1.2rem 1.5rem}
+.ba-card-info h3{font-family:var(--font-heading);font-size:1rem;color:var(--white);text-transform:uppercase;letter-spacing:.05em}
+.ba-card-info p{font-size:.85rem;color:var(--text-muted);margin-top:.3rem}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center;padding:2rem}
+.lightbox.active{display:flex}
+.lightbox-content{max-width:800px;width:100%;text-align:center}
+.lightbox-placeholder{width:100%;aspect-ratio:4/3;background:var(--charcoal);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:var(--font-heading);font-size:1rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border)}
+.lightbox-close{position:absolute;top:2rem;right:2rem;background:none;border:none;color:var(--white);font-size:2rem;cursor:pointer;line-height:1}
+.lightbox-nav{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem}
+.lightbox-nav button{background:var(--charcoal);border:1px solid var(--border);color:var(--white);padding:.6rem 1.5rem;cursor:pointer;font-family:var(--font-heading);letter-spacing:.05em;transition:all .3s}
+.lightbox-nav button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.lightbox-title{font-family:var(--font-heading);color:var(--gold);font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;margin-top:1rem}
+/* Instagram */
+.instagram-section{padding:80px 0;text-align:center}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin:3rem 0;max-width:900px;margin-left:auto;margin-right:auto}
+.insta-item{aspect-ratio:1;background:linear-gradient(135deg,#1a1a1a,#252525);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:1.5rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.insta-item:hover{transform:scale(1.05);z-index:1}
+.insta-item::after{content:'♥';position:absolute;inset:0;background:rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--gold);opacity:0;transition:opacity .3s}
+.insta-item:hover::after{opacity:1}
+.insta-follow{display:inline-flex;align-items:center;gap:.5rem;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:.8rem 2rem;font-family:var(--font-heading);letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;text-decoration:none;transition:all .3s}
+.insta-follow:hover{background:var(--gold);color:var(--black)}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="../index.html" class="logo">Dom's <span>Barber</span> Lounge</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="btn-nav">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="gallery-hero">
+  <div class="container">
+    <p class="section-label">Our Work</p>
+    <h1>The <span>Gallery</span></h1>
+    <p>Every cut tells a story. Browse our portfolio of precision cuts, fades, and grooming transformations.</p>
+  </div>
+</section>
+
+<section style="background:var(--black);padding:0 0 20px">
+  <div class="container">
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="fade">Fades</button>
+      <button class="filter-btn" data-filter="classic">Classic Cuts</button>
+      <button class="filter-btn" data-filter="beard">Beard</button>
+      <button class="filter-btn" data-filter="kids">Kids</button>
+      <button class="filter-btn" data-filter="shave">Hot Towel Shave</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Fade items -->
+      <div class="gallery-item" data-category="fade" data-title="Skin Fade" data-style="Low Skin Fade">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Skin Fade</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Skin Fade</h3><p>Low Fade · Sharp Lines</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="fade" data-title="Mid Fade" data-style="Mid Taper Fade">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Mid Fade</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Mid Taper Fade</h3><p>Mid Fade · Textured Top</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="fade" data-title="High Fade" data-style="High Skin Fade">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>High Fade</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>High Skin Fade</h3><p>High Fade · Clean Finish</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <!-- Classic items -->
+      <div class="gallery-item" data-category="classic" data-title="Classic Cut" data-style="Scissor Cut">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Classic Cut</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Classic Scissor Cut</h3><p>Timeless · Professional</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="classic" data-title="Crew Cut" data-style="Modern Crew">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Crew Cut</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Modern Crew Cut</h3><p>Clean · Versatile</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="classic" data-title="Textured Crop" data-style="French Crop">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>French Crop</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>French Crop</h3><p>Modern · Textured</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <!-- Beard items -->
+      <div class="gallery-item" data-category="beard" data-title="Full Beard" data-style="Shaped & Trimmed">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Full Beard</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Full Beard Shape</h3><p>Sculpted · Defined</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="beard" data-title="Stubble" data-style="Designer Stubble">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Stubble</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Designer Stubble</h3><p>Sharp Lines · Even Length</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="beard" data-title="Beard + Cut" data-style="Full Combo">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Cut + Beard</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Cut + Beard Combo</h3><p>Complete Grooming Package</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <!-- Kids items -->
+      <div class="gallery-item" data-category="kids" data-title="Kids Cut" data-style="Boys Fade">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Kids Cut</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Kids Fade</h3><p>Fun · Age-Appropriate</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="kids" data-title="Boys Classic" data-style="Classic Boys Cut">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Boys Classic</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Boys Classic Cut</h3><p>Smart · Neat</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <!-- Shave items -->
+      <div class="gallery-item" data-category="shave" data-title="Hot Towel Shave" data-style="Straight Razor">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Hot Towel Shave</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Hot Towel Shave</h3><p>Straight Razor · Luxurious</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <!-- More fade items -->
+      <div class="gallery-item" data-category="fade" data-title="Drop Fade" data-style="Drop Skin Fade">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Drop Fade</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Drop Skin Fade</h3><p>Curved · Artistic</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="fade" data-title="Burst Fade" data-style="Burst Taper">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Burst Fade</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Burst Fade</h3><p>Bold · Stylish</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="classic" data-title="Pompadour" data-style="Modern Pompadour">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Pompadour</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Modern Pompadour</h3><p>Volume · Classic Shape</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+      <div class="gallery-item" data-category="beard" data-title="Goatee" data-style="Shaped Goatee">
+        <div class="gallery-placeholder"><span class="icon">✂</span><span>Goatee</span></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h3>Shaped Goatee</h3><p>Precise · Defined</p></div></div>
+        <div class="gallery-zoom">⤢</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Before & After -->
+<section class="before-after-section">
+  <div class="container">
+    <p class="section-label">Transformations</p>
+    <h2 class="section-title">Before <span class="gold">& After</span></h2>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-img"><span class="ba-label">Before</span><span class="icon">👤</span></div>
+          <div class="ba-img"><span class="ba-label after">After</span><span class="icon">✨</span></div>
+        </div>
+        <div class="ba-card-info"><h3>Skin Fade Transformation</h3><p>Low skin fade with textured top · 45 min</p></div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-img"><span class="ba-label">Before</span><span class="icon">👤</span></div>
+          <div class="ba-img"><span class="ba-label after">After</span><span class="icon">✨</span></div>
+        </div>
+        <div class="ba-card-info"><h3>Beard Shaping</h3><p>Full beard sculpt + hot towel finish · 30 min</p></div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-img"><span class="ba-label">Before</span><span class="icon">👤</span></div>
+          <div class="ba-img"><span class="ba-label after">After</span><span class="icon">✨</span></div>
+        </div>
+        <div class="ba-card-info"><h3>Classic Cut Refresh</h3><p>Full scissor cut + beard combo · 60 min</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram -->
+<section class="instagram-section">
+  <div class="container">
+    <p class="section-label">Follow Along</p>
+    <h2 class="section-title">Find Us on <span class="gold">Instagram</span></h2>
+    <p style="color:var(--text-muted);margin-top:.5rem">Fresh cuts, daily inspiration — follow @domsbarberlounge</p>
+    <div class="insta-grid">
+      <div class="insta-item">📸</div>
+      <div class="insta-item">📸</div>
+      <div class="insta-item">📸</div>
+      <div class="insta-item">📸</div>
+      <div class="insta-item">📸</div>
+      <div class="insta-item">📸</div>
+    </div>
+    <a href="https://instagram.com/domsbarberlounge" target="_blank" rel="noopener" class="insta-follow">
+      📷 &nbsp;Follow @domsbarberlounge
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="booking-banner">
+  <div class="container" style="text-align:center">
+    <p class="section-label">Ready for Your Cut?</p>
+    <h2 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);color:var(--white);font-weight:300">Like What You <span class="gold">See?</span></h2>
+    <p style="color:rgba(255,255,255,.7);margin:1rem 0 2.5rem">Book your appointment today and join hundreds of satisfied clients.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="book.html" class="btn-primary">Book Appointment</a>
+      <a href="tel:6137252222" class="btn-secondary">📞 613-725-2222</a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-content">
+    <div class="lightbox-placeholder" id="lightboxImage">Photo Loading...</div>
+    <div class="lightbox-title" id="lightboxTitle"></div>
+    <div class="lightbox-nav">
+      <button id="lightboxPrev">← Prev</button>
+      <button id="lightboxNext">Next →</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Dom's <span>Barber</span> Lounge</div>
+        <p>Toronto's premier destination for precision cuts, fades, and luxury grooming.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">👤</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="book.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Classic Cut</a></li>
+          <li><a href="services.html">Skin Fade</a></li>
+          <li><a href="services.html">Beard Trim</a></li>
+          <li><a href="services.html">Hot Towel Shave</a></li>
+          <li><a href="services.html">Kids Cut</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 60 Lyndale Ave, Toronto, ON</p>
+        <p>📞 <a href="tel:6137252222">613-725-2222</a></p>
+        <p>🕐 Mon–Fri: 9AM–7PM</p>
+        <p>🕐 Sat: 8AM–6PM</p>
+        <p>🕐 Sun: 10AM–4PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dom's Barber Lounge. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="book.html" class="sticky-book" aria-label="Book appointment">Book Now</a>
+<a href="tel:6137252222" class="sticky-call" aria-label="Call us">📞</a>
+
+<script src="../js/main.js"></script>
+<script>
+// Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    galleryItems.forEach(item => {
+      if(filter === 'all' || item.dataset.category === filter) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+// Lightbox
+let currentIdx = 0;
+const visibleItems = () => [...galleryItems].filter(i => i.style.display !== 'none');
+galleryItems.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    const visible = visibleItems();
+    currentIdx = visible.indexOf(item);
+    openLightbox(item);
+  });
+  item.setAttribute('tabindex', '0');
+  item.addEventListener('keydown', e => { if(e.key === 'Enter') item.click(); });
+});
+function openLightbox(item) {
+  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lightboxTitle').textContent = `${item.dataset.title} · ${item.dataset.style}`;
+  document.getElementById('lightboxImage').textContent = item.dataset.title;
+  document.body.style.overflow = 'hidden';
+}
+document.getElementById('lightboxClose').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+});
+document.getElementById('lightboxPrev').addEventListener('click', () => {
+  const visible = visibleItems();
+  currentIdx = (currentIdx - 1 + visible.length) % visible.length;
+  openLightbox(visible[currentIdx]);
+});
+document.getElementById('lightboxNext').addEventListener('click', () => {
+  const visible = visibleItems();
+  currentIdx = (currentIdx + 1) % visible.length;
+  openLightbox(visible[currentIdx]);
+});
+document.getElementById('lightbox').addEventListener('click', e => {
+  if(e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+</script>
+</body>
+</html>

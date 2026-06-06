@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ – Dom's Barber Lounge | Common Questions Toronto Barber</title>
+<meta name="description" content="Frequently asked questions about Dom's Barber Lounge in Toronto — pricing, booking, services, cancellations, and more.">
+<link rel="canonical" href="https://domsbarberlounge.ca/pages/faq.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.faq-hero{padding:140px 0 60px;background:var(--black);text-align:center}
+.faq-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);color:var(--white);font-weight:300;letter-spacing:.05em}
+.faq-hero h1 span{color:var(--gold)}
+.faq-search{max-width:500px;margin:1.5rem auto 0;position:relative}
+.faq-search input{width:100%;background:var(--charcoal);border:1px solid var(--border);color:var(--white);padding:1rem 3rem 1rem 1.2rem;font-family:var(--font-body);font-size:.95rem;outline:none;transition:border-color .3s;box-sizing:border-box;border-radius:2px}
+.faq-search input:focus{border-color:var(--gold)}
+.faq-search span{position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--text-muted)}
+.faq-categories{display:flex;justify-content:center;gap:.8rem;padding:2.5rem 0;flex-wrap:wrap}
+.faq-cat{background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:.5rem 1.2rem;font-family:var(--font-heading);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:2px}
+.faq-cat.active,.faq-cat:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.faq-section-wrap{padding:0 0 80px}
+.faq-section-title{font-family:var(--font-heading);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:3rem 0 1rem;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.8rem}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:1.4rem 0;color:var(--white);font-family:var(--font-heading);font-size:1rem;letter-spacing:.02em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color .3s}
+.faq-q:hover{color:var(--gold)}
+.faq-q.open{color:var(--gold)}
+.faq-icon{font-size:1.2rem;color:var(--gold);flex-shrink:0;transition:transform .3s;line-height:1}
+.faq-q.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-a.open{max-height:500px;padding-bottom:1.5rem}
+.faq-a p{color:var(--text-muted);line-height:1.8;font-size:.95rem}
+.faq-a a{color:var(--gold)}
+.faq-a ul{color:var(--text-muted);padding-left:1.2rem;line-height:2}
+/* Still need help */
+.need-help{background:var(--charcoal);border:1px solid var(--border);padding:3rem;text-align:center;margin:4rem 0;border-radius:2px}
+.need-help h3{font-family:var(--font-display);font-size:1.8rem;color:var(--white);font-weight:400;margin-bottom:.5rem}
+.need-help p{color:var(--text-muted);margin-bottom:2rem}
+.help-options{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I book an appointment?","acceptedAnswer":{"@type":"Answer","text":"You can book online at domsbarberlounge.ca/pages/book.html, call us at 613-725-2222, or walk in. Online booking is available 24/7."}},
+    {"@type":"Question","name":"How much does a haircut cost?","acceptedAnswer":{"@type":"Answer","text":"Our services start at $25 for a buzz cut, $35 for a classic haircut, and $45 for a skin fade. See our full pricing at domsbarberlounge.ca/pages/services.html."}},
+    {"@type":"Question","name":"Do you accept walk-ins?","acceptedAnswer":{"@type":"Answer","text":"Yes, we accept walk-ins based on availability. However, we recommend booking online to guarantee your preferred time slot."}},
+    {"@type":"Question","name":"Where are you located?","acceptedAnswer":{"@type":"Answer","text":"Dom's Barber Lounge is located at 60 Lyndale Ave, Toronto, Ontario, Canada."}},
+    {"@type":"Question","name":"What are your hours?","acceptedAnswer":{"@type":"Answer","text":"Monday to Friday 9AM–7PM, Saturday 8AM–6PM, Sunday 10AM–4PM."}}
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="../index.html" class="logo">Dom's <span>Barber</span> Lounge</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="btn-nav">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="faq-hero">
+  <div class="container">
+    <p class="section-label">Got Questions?</p>
+    <h1>Frequently Asked <span>Questions</span></h1>
+    <p>Everything you need to know about Dom's Barber Lounge.</p>
+    <div class="faq-search">
+      <input type="text" id="faqSearch" placeholder="Search questions..." aria-label="Search FAQ">
+      <span>🔍</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--black)">
+  <div class="container">
+    <div class="faq-categories">
+      <button class="faq-cat active" data-cat="all">All</button>
+      <button class="faq-cat" data-cat="booking">Booking</button>
+      <button class="faq-cat" data-cat="pricing">Pricing</button>
+      <button class="faq-cat" data-cat="services">Services</button>
+      <button class="faq-cat" data-cat="location">Location</button>
+      <button class="faq-cat" data-cat="policy">Policies</button>
+    </div>
+
+    <div class="faq-section-wrap">
+
+      <div class="faq-section-title" data-cat="booking">Booking & Appointments</div>
+
+      <div class="faq-item" data-cat="booking">
+        <button class="faq-q" aria-expanded="false">How do I book an appointment? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>You can book in three ways: <br><br>1. <strong style="color:var(--white)">Online</strong> — Use our <a href="book.html">booking page</a> to pick your service, date, and time. Available 24/7.<br>2. <strong style="color:var(--white)">Phone</strong> — Call <a href="tel:6137252222">613-725-2222</a> during business hours.<br>3. <strong style="color:var(--white)">Walk-in</strong> — Subject to availability. We recommend booking ahead to secure your preferred slot.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="booking">
+        <button class="faq-q" aria-expanded="false">How far in advance should I book? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>We recommend booking 2–3 days in advance for weekday appointments, and 5–7 days ahead for Saturdays and peak times. Same-day appointments are sometimes available — call us or check online to see current availability.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="booking">
+        <button class="faq-q" aria-expanded="false">Do you accept walk-ins? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes! Walk-ins are always welcome based on availability. If we have an open chair, we'll take you right away. For a guaranteed time slot, especially on weekends, we strongly recommend booking online in advance.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="booking">
+        <button class="faq-q" aria-expanded="false">How do I cancel or reschedule? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>We ask for at least <strong style="color:var(--white)">24 hours notice</strong> for cancellations or rescheduling. You can:<br><ul><li>Call us at <a href="tel:6137252222">613-725-2222</a></li><li>Reply to your booking confirmation email</li><li>Use the link in your reminder text message</li></ul>Late cancellations (under 2 hours) or no-shows may be subject to a fee on future bookings.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="booking">
+        <button class="faq-q" aria-expanded="false">Will I get a reminder before my appointment? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes. When you book online, you can opt in to receive an email reminder 24 hours before your appointment and/or an SMS reminder 2 hours before. These are sent automatically so you never miss your slot.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="booking">
+        <button class="faq-q" aria-expanded="false">Can I book for a group or event? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Absolutely! For weddings, bachelor parties, corporate events, or group bookings of 3 or more, please contact us directly at <a href="tel:6137252222">613-725-2222</a> or <a href="contact.html">send a message</a> so we can arrange dedicated time and special pricing.</p></div>
+      </div>
+
+      <div class="faq-section-title" data-cat="pricing">Pricing</div>
+
+      <div class="faq-item" data-cat="pricing">
+        <button class="faq-q" aria-expanded="false">How much does a haircut cost? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Our prices are:<br><ul><li>Buzz Cut — $25</li><li>Classic Haircut — $35</li><li>Skin Fade — $45</li><li>Kids Cut (under 12) — $25</li><li>Beard Trim & Shape — $25</li><li>Cut + Beard Combo — $60</li><li>Hot Towel Straight Razor Shave — $40</li></ul>See the full <a href="services.html">pricing page</a> for details.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="pricing">
+        <button class="faq-q" aria-expanded="false">Do you offer any discounts or promotions? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes! First-time clients can use the promo code <strong style="color:var(--gold)">FIRSTCUT</strong> for a special discount. We also run seasonal promotions — sign up for our newsletter or follow us on Instagram to stay updated.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="pricing">
+        <button class="faq-q" aria-expanded="false">What payment methods do you accept? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>We accept cash, all major credit and debit cards (Visa, Mastercard, Amex), Apple Pay, and Google Pay. Tips can be added digitally or given in cash — always appreciated but never expected.</p></div>
+      </div>
+
+      <div class="faq-section-title" data-cat="services">Services</div>
+
+      <div class="faq-item" data-cat="services">
+        <button class="faq-q" aria-expanded="false">What's included in a skin fade? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>A skin fade includes a full consultation, precision clipper work to achieve a seamless blend from skin to your desired length, scissor work on top, lineup/edge-up, and a hot towel finish. The service takes approximately 45 minutes.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="services">
+        <button class="faq-q" aria-expanded="false">Do you do beard trims on their own? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes! Beard trim & shape is a standalone service priced at $25. This includes consultation, sculpting, shaping with clippers and a straight razor, and a hot towel finish for skin care.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="services">
+        <button class="faq-q" aria-expanded="false">Do you cut kids' hair? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Absolutely. Dom is great with kids of all ages. Kids cuts are available for children under 12 at a reduced price of $25. We make the experience fun and comfortable for young clients.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="services">
+        <button class="faq-q" aria-expanded="false">Can I bring a reference photo? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes — we encourage it! Bringing a reference photo (or several) is the best way to communicate exactly what you want. We'll discuss it during your consultation and give you honest feedback on what will work best for your hair type and face shape.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="services">
+        <button class="faq-q" aria-expanded="false">Do you offer hairstyle recommendations? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes! Every appointment starts with a consultation. Dom will assess your hair type, face shape, and lifestyle to recommend the most flattering style for you. You can also use our AI Hairstyle Recommender on the homepage for inspiration before your visit.</p></div>
+      </div>
+
+      <div class="faq-section-title" data-cat="location">Location & Hours</div>
+
+      <div class="faq-item" data-cat="location">
+        <button class="faq-q" aria-expanded="false">Where exactly are you located? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>We're at <strong style="color:var(--white)">60 Lyndale Ave, Toronto, Ontario</strong> — in the Leaside/East York area. Use the <a href="contact.html">Contact page</a> for a Google Maps link and transit directions.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="location">
+        <button class="faq-q" aria-expanded="false">Is there parking nearby? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes. Free street parking is typically available on Lyndale Ave and nearby side streets. Most clients find a spot within a 2-minute walk. See our <a href="contact.html">Contact page</a> for full parking and transit details.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="location">
+        <button class="faq-q" aria-expanded="false">What are your business hours? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p><ul><li>Monday – Friday: 9:00 AM – 7:00 PM</li><li>Saturday: 8:00 AM – 6:00 PM</li><li>Sunday: 10:00 AM – 4:00 PM</li></ul>Hours may vary on holidays — follow us on Instagram for updates.</p></div>
+      </div>
+
+      <div class="faq-section-title" data-cat="policy">Policies</div>
+
+      <div class="faq-item" data-cat="policy">
+        <button class="faq-q" aria-expanded="false">What is your cancellation policy? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>We kindly request 24 hours notice for cancellations or rescheduling. Repeated no-shows or very late cancellations may result in a booking deposit being required for future appointments. We understand emergencies happen — just let us know as soon as possible.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="policy">
+        <button class="faq-q" aria-expanded="false">What if I'm not happy with my cut? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Your satisfaction is our priority. If you're not 100% happy with your cut, please let us know before leaving — we'll make it right. We stand behind our work and will gladly make adjustments at no extra charge.</p></div>
+      </div>
+
+      <div class="faq-item" data-cat="policy">
+        <button class="faq-q" aria-expanded="false">Is my personal data safe when I book online? <span class="faq-icon">+</span></button>
+        <div class="faq-a" role="region"><p>Yes. We take data privacy seriously. Your information is used solely to manage your booking and send reminders. We never sell your data to third parties. Read our full <a href="privacy-policy.html">Privacy Policy</a> for details.</p></div>
+      </div>
+
+    </div>
+
+    <!-- Need Help -->
+    <div class="need-help">
+      <h3>Still Have Questions?</h3>
+      <p>Our team is happy to help. Reach out by phone or message and we'll get back to you quickly.</p>
+      <div class="help-options">
+        <a href="tel:6137252222" class="btn-primary">📞 Call 613-725-2222</a>
+        <a href="contact.html" class="btn-secondary">Send a Message</a>
+        <a href="book.html" class="btn-secondary">Book Online</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Dom's <span>Barber</span> Lounge</div>
+        <p>Toronto's premier destination for precision cuts, fades, and luxury grooming.</p>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="book.html">Book Now</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul></div>
+      <div class="footer-contact"><h4>Contact</h4>
+        <p>📍 60 Lyndale Ave, Toronto, ON</p>
+        <p>📞 <a href="tel:6137252222">613-725-2222</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dom's Barber Lounge. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="book.html" class="sticky-book">Book Now</a>
+<a href="tel:6137252222" class="sticky-call">📞</a>
+
+<script src="../js/main.js"></script>
+<script>
+// Accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      b.setAttribute('aria-expanded','false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if(!isOpen) {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      btn.nextElementSibling.classList.add('open');
+    }
+  });
+});
+
+// Filter
+document.querySelectorAll('.faq-cat').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.faq-cat').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+    });
+    document.querySelectorAll('.faq-section-title').forEach(title => {
+      title.style.display = (cat === 'all' || title.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+});
+
+// Search
+document.getElementById('faqSearch').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+  document.querySelectorAll('.faq-section-title').forEach(t => t.style.display = q ? 'none' : '');
+});
+</script>
+</body>
+</html>
