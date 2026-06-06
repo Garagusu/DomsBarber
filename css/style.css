@@ -1637,8 +1637,11 @@ h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
   border-radius: var(--radius);
   font-size: 0.85rem;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
   transition: var(--transition);
+  background: var(--charcoal);
+  color: var(--white);
+  font-family: var(--font-heading);
 }
 .cal-day:hover { border-color: var(--gold); color: var(--gold); }
 .cal-day.today { color: var(--gold); font-weight: 700; }
